@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>
+      <%= @list.name %>
+    </h1>
+          <% @list.bookmarks.each do |bookmark| %>
+          <li class="list-group-item">
+            <%= link_to bookmark.comment %>
+            <div class="card" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"> <%= bookmark.comment %></h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </li>
+
+        <% end %>
+
+    <%= link_to "Create a Bookmark", new_list_bookmark_path(@list) %>
+
+</div>
